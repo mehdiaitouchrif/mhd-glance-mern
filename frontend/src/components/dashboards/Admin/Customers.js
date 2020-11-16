@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getCustomers } from '../../../actions/customersActions'
 import PropTypes from 'prop-types'
 import Alert from '../../layout/Alert'
-
+import Image from '../../../img/customers.svg'
 
 const Customers = ({ getCustomers, customers, loading, alerts }) => {
     useEffect(() => {
@@ -18,7 +18,7 @@ const Customers = ({ getCustomers, customers, loading, alerts }) => {
             <h2 className="secondary-heading">Customers</h2>
             {customers && customers.length <= 1 && (
                 <div className="orders__empty">
-                    <img src="/uploads/customers.svg" alt="Customers SVG" />
+                    <img src={Image} alt="Customers SVG" />
                     <p className="lead text-center my-2">You have no customers for now!</p>
                 </div>
             )}

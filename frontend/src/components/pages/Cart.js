@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getFromCart } from '../../actions/productsActions'
 import CartItem from '../products/CartItem';
 import Alert from '../layout/Alert';
-
+import Image from '../../../src/img/cart.svg'
 
 const Cart = ({ cart, getFromCart, alerts }) => {
     useEffect(() => {
@@ -37,7 +37,7 @@ const Cart = ({ cart, getFromCart, alerts }) => {
                     <h1 className='cart__head'>Items In Cart</h1>
                     {cart && cart.length === 0 && (
                         <div className="cart__empty">
-                            <img src="uploads/cart.svg" className='empty' alt="Cart Empty" />
+                            <img src={Image} className='empty' alt="Cart Empty" />
                             <p className="lead my-2 text-center">Your cart is empty!</p>
                         </div>
                     )}

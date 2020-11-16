@@ -5,6 +5,7 @@ import { getUserOrders } from '../../../actions/ordersActions';
 import PropTypes from 'prop-types'
 import Spinner from '../../layout/Spinner'
 import Alert from '../../layout/Alert'
+import Image from '../../../img/orders.svg';
 
 const Orders = ({ getUserOrders, userOrders, loading, user, alerts, error }) => {
     useEffect(() => {
@@ -19,7 +20,7 @@ const Orders = ({ getUserOrders, userOrders, loading, user, alerts, error }) => 
             <div className="orders__products">
                 {!loading && !userOrders || userOrders && userOrders.length === 0 && (
                     <Fragment>
-                        <img className='orders__picture' src="/uploads/order.svg" alt="Wishlist SVG" />
+                        <img className='orders__picture' src={Image} alt="Wishlist SVG" />
                         <h1 className='orders__message'>Your have no orders yet!</h1>
                     </Fragment>
                 )}

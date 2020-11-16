@@ -4,7 +4,7 @@ import Spinner from '../../layout/Spinner'
 import { connect } from 'react-redux'
 import { getOrders } from '../../../actions/ordersActions'
 import PropTypes from 'prop-types'
-
+import Image from '../../../img/orders.svg'
 
 const Orders = ({ getOrders, loading, orders }) => {
     useEffect(() => {
@@ -16,7 +16,7 @@ const Orders = ({ getOrders, loading, orders }) => {
             <h2 className="secondary-heading">Orders</h2>
             {!loading && orders && orders.length === 0 && (
                 <div className="orders__empty">
-                    <img src="" alt="Orders SVG" />
+                    <img src={Image} alt="Orders SVG" />
                     <p className="lead text-center my-2">You have no orders for now!</p>
                 </div>
             )}
