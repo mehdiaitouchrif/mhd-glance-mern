@@ -34,6 +34,7 @@ const Dashboard = ({ changeDisplayedComponent, orders }) => {
                             <small>{moment(order.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</small>
                         </div>
                     ))}
+                    {orders && orders.length === 0 && <h4>NO SALES!!</h4>}
                 </div>
             </div>
         </div>
