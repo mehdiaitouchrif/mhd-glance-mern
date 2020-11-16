@@ -1,0 +1,23 @@
+.productAddEdit {
+    box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: .2);
+    background-color: $light-color;
+    margin-top: 4rem;
+    padding: 2rem;
+    
+    &__head {
+        text-align: center;
+        & > img {
+            width: 25rem;
+            margin: 0 auto;
+            border: 2px solid $light-gray-2;
+        }
+    }
+    &__head, 
+    &__text {
+        padding: .5rem 0;
+        > div {
+            border-bottom: 1px solid $light-gray-2;
+            margin-bottom: 1rem;
+        }
+    }
+}

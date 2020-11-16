@@ -1,0 +1,11 @@
+.auth {
+    background-color: $light-gray-1;
+    height: 100vh;
+    font-size: 1.6rem;
+
+    .container {
+        max-width: 65rem;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,68 @@
+.newsletter {
+    width: 100%;
+    background-color: $light-gray-1;
+    padding: 4rem;
+
+    &__head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        span {
+            display: inline;
+            font-size: 2.25rem;
+            text-align: center;
+            padding-bottom: .8rem;
+            margin: 0 0 1.5rem 0;
+            text-transform: uppercase;
+            color: $text-color;
+            border-bottom: 2px solid $light-gray-2;   
+        }
+    }
+
+    &__message {
+        font-size: 2rem;
+        color: $text-color;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    &__form {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 0 5rem 0;
+
+
+        & input[type=email],
+        & input[type=submit] {
+            padding: 1.25rem 3rem;
+            font-size: 1.9rem;
+            border: none;
+            font-family: inherit;
+
+            &:focus {
+                outline: none;
+                border-bottom: 3px solid $text-color;
+            }
+        }
+
+        & input[type=email] {
+            color: $text-color;
+            border-bottom: 3px solid #fff;
+            transition: .2s all;
+        }
+
+        & input[type=submit] {
+            color: $light-color;
+            background-color: $dark-color;
+            border-bottom: 3px solid $dark-color;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: lighten($color: $dark-color, $amount: 5%);
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.products {
+    padding: 2rem;
+    font-size: 1.6rem;
+
+    & > div {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        margin: 0 auto;
+
+        @include respond (wide-screen) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include respond (tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include respond (phone) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &p.lead {
+        margin-bottom: 1rem;
+        background-color: $light-gray-1;;
+    }
+}

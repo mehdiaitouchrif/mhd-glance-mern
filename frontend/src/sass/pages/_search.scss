@@ -1,0 +1,93 @@
+.search {
+    font-size: 1.5rem;
+    padding: 1rem 4rem;
+
+    @include respond(tablet) {
+        padding: 1rem;
+    }
+    .container {
+        max-width: 120rem;
+    }
+
+    .filters {
+        border-bottom: 2px solid $light-gray-1;
+        padding: 1rem;
+
+        &__filter {
+            display: flex;
+            @include respond (tablet) {
+                flex-direction: column;
+            }
+        }
+
+        &__title {
+            margin-right: 1rem;
+            margin-top: 1.75rem;
+        }
+
+        &__prices {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__price {  
+            margin: 1rem;
+            padding: .8rem 1.5rem;
+            border: 1px solid $light-gray-2;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: 0.15);
+            }
+        }
+
+        &__form {
+            border: 1px solid $light-color;            
+            padding: 1rem 0;
+
+            &:hover {
+                border: 1px solid $light-gray-2;            
+                box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: 0.15);
+            }
+            & input {
+                padding: 1rem;
+                width: 10rem;
+                margin: 0 1rem;
+                font-family: inherit;
+                text-align: center;
+                border: 1px solid $light-gray-2;
+
+                &[type=submit] {
+                    background-color: $dark-color;
+                    color: $light-color;
+                    cursor: pointer;
+                }
+
+                &:focus {
+                    box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: 0.15);
+                    outline: none;
+                }
+            }
+
+            & span {
+                font-size: 2rem;
+            }
+        }
+
+        &__sort {
+            padding: .8rem 1.5rem;
+            margin: 1rem .5rem;
+            cursor: pointer;
+
+            &.active {
+                box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: .2);
+                border: 1px solid $light-gray-2;
+            }
+
+            &:hover {
+                box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: .15);
+            }
+        }
+    }
+}
+

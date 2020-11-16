@@ -1,0 +1,91 @@
+.container {
+    max-width: 200rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block !important;
+}
+
+.decoration-none {
+    text-decoration: none;
+}
+
+.lead {
+    font-size: 2rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.btn-block {
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+$spaceamounts: (1,2,3,4,5);
+
+@each $space in $spaceamounts {
+    .grid-#{$space} {
+        grid-template-columns: repeat(#{$space}, 1fr);
+    }
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+    .my-#{$space} {
+        margin: #{$space}rem 0;
+    }
+    .mx-#{$space} {
+        margin: 0 #{$space}rem;
+    }
+    .mt-#{$space} {
+        margin-top: #{$space}rem;
+    }
+    .mb-#{$space} {
+        margin-bottom: #{$space}rem;
+    }
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+    .py-#{$space} {
+        padding: #{$space}rem 0;
+    }
+    .px-#{$space} {
+        margin: 0 #{$space}rem;
+    }
+}

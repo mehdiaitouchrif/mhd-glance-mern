@@ -1,0 +1,59 @@
+.order {
+    display: grid;
+    grid-template-columns: 15% 78% 5%; 
+    gap: 1rem;
+    margin: .5rem 0;
+    border-bottom: 1px solid $light-gray-2;
+
+    
+    & > * {
+        margin-bottom: .5rem;
+    }
+
+    &__picture {
+        padding: .5rem;
+        border: 1px solid $light-gray-1;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem 1rem;
+    }
+
+    &__head {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        background-color: $light-gray-1;
+    }
+
+    &__text {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+    }
+
+    &__cancel {
+        height: 4.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        margin-top: .5rem;
+        padding: .5rem 0;
+        background-color: $light-gray-2;
+        color: $text-color;
+        cursor: pointer;
+
+
+
+        &:hover {
+            background-color: lighten($color: $dark-color, $amount: 10%);
+            color: $light-color;
+        }
+    }
+
+
+}

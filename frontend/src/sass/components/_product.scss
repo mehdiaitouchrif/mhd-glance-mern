@@ -1,0 +1,29 @@
+.product {
+    padding: 1rem;
+    box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: .15);
+    cursor: pointer;
+
+
+    &__picture {
+        transition: .4s all;
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+
+    &:hover &__picture {
+        transform: scale(1.05);
+    }
+
+    &__text {
+        padding: 1rem;
+    }
+
+    &__name {
+        font-size: 1.8rem;
+    }
+
+    &__price {
+        font-size: 2.5rem;
+    }
+}

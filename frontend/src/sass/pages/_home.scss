@@ -1,0 +1,22 @@
+.homepage {
+    .container {
+        max-width: 200rem;
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+        gap: 2rem;
+        
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+        }
+
+        & > div:first-child {
+            max-width: 20rem;
+        }
+
+        & > div:last-child {
+            max-width: 120rem;
+            // margin: 0 auto;
+        }
+    }
+
+}

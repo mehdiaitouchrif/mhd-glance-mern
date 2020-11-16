@@ -1,0 +1,72 @@
+.buy {
+    background-color: $light-color;
+    min-height: 100vh;
+    font-size: 1.6rem;
+
+    .container {
+        max-width: 180rem;
+        margin: 0 auto;
+        padding: 2rem 4rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 1rem;
+        } 
+    }
+
+    .form {
+        padding: 0 3rem;
+        border: 2px solid $light-gray-1;
+        border-radius: 4px;
+
+        & > div:last-child {
+            font-size: 2rem;
+        }
+
+        & input:not([type='submit']) {
+            background-color: $light-gray-1;
+        }
+    }
+
+    .order-summary {
+        padding: 0 3rem;
+        border: 2px solid $light-gray-1;
+        border-radius: 4px;
+
+        &__head, &__item {
+            display: grid;
+            grid-template-columns: 4fr 1fr 1fr;
+            gap: 1rem;
+            padding: 0 .5rem;
+        }
+
+        &__head,
+        &__item > p {
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        
+        &__item {
+            & > div, & > p {
+                margin-top: 2rem;
+                img {
+                    width: 14rem;;
+                }
+            }
+        }
+
+        &__summary {
+            padding: 1rem 0;
+            & > div {
+                margin: 1rem 0;
+                border-bottom: 2px solid $light-gray-2;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,54 @@
+.sidebar {
+    font-size: 1.6rem;
+    padding: 2rem 1rem;
+    border-right: 2px solid $light-gray-1;
+    min-height: 100vh;
+
+    @include respond (phone) {
+        display: none;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        background-color: $light-gray-1;
+        color: $dark-color;
+        padding: 1rem;
+        border-left: 2px solid $dark-color;
+    }
+
+    &__list {
+        margin-top: 1rem;
+        & > div {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            text-decoration: none;
+            padding: 1rem;
+            margin-bottom: .5rem;
+            border-bottom: 2px solid $light-color;
+            border-left: 2px solid $light-color;
+            transition: .2s all;
+            cursor: pointer;
+
+            & i {
+                margin-right: .5rem;
+            }
+
+            &.active {
+                border-bottom: 2px solid $dark-color;
+                border-left: 2px solid $dark-color;
+                border-radius: 4rem;
+            }
+
+            &:hover {
+                border-bottom: 2px solid $dark-color;
+                border-left: 2px solid $dark-color;
+                border-radius: 4rem;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+    }
+
+
+}

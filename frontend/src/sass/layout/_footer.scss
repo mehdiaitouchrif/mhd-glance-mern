@@ -1,0 +1,33 @@
+.footer {
+    padding: 2rem;
+    width: 100%;
+    background-color: $light-gray-2;
+
+    &__social-media {
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        & > * {
+            margin: 0 1rem;
+
+            &:hover {
+                color: lighten($color: $dark-color, $amount: 30%);
+            }
+        }
+    }
+
+    &__copy {
+        display: flex;
+        justify-content: center;
+        p {
+            font-size: 1.6rem;
+            text-align: center;
+            margin: 1rem 0;
+            padding: .5rem 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-top: 1px solid lighten($color: $text-color, $amount: 30%);
+            border-bottom: 1px solid lighten($color: $text-color, $amount: 30%);
+        }
+    }
+}

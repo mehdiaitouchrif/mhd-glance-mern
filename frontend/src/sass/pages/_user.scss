@@ -1,0 +1,89 @@
+.user {
+    margin-top: 3rem;
+    margin-bottom: 10%;
+    .container {
+        max-width: 120rem;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2rem;
+        padding: 2rem;
+
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .profile {
+        padding: 2rem;
+        border: 1px solid $light-gray-2;
+        text-transform: capitalize;
+
+        &__picture {
+            font-size: 3.5rem;
+            background-color: $blue-color;
+            text-align: center;
+            padding: 2rem 1rem;
+            width: 10rem;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        &__name {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        &__list {
+            font-size: 1.6rem;
+            margin-top: 3rem;
+        }
+
+        &__item {
+            padding: 1rem;
+            background-color: $light-gray-1;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: .2s all;
+
+            &--active {
+                border-left: 3px solid $dark-color;
+            }
+
+            &:hover {
+                background-color: $light-gray-2;
+            }
+        }
+    }
+
+    .wishlist, .orders {
+        max-width: 100%;
+        border: 1px solid $light-gray-2;
+        padding: 2rem;
+        animation: animate .5s ease;
+        backface-visibility: hidden;
+        z-index: 10;
+
+        &__picture {
+            display: block;
+            height: 17rem;
+            margin: 2rem auto;
+        }
+
+        &__message {
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+    }
+
+    @keyframes animate {
+        from {
+            opacity: 0;
+            transform: translateX(-40rem);
+        } to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+}

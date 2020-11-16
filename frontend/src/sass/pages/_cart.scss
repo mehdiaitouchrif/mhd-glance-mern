@@ -1,0 +1,71 @@
+.cart {
+    padding: 2rem 4rem;
+    margin-bottom: 30vh;
+    
+    .container {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 2rem;
+        max-width: 120rem;
+
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__head {
+        padding: 1rem;
+        background-color: $light-gray-1;
+        color: $text-color;
+        font-size: 2rem;
+    }
+
+    &__empty {
+        margin-top: 2rem;
+        & > img {
+            height: 20rem;
+        }
+    }
+
+    
+    &__items {
+        border: 1px solid $light-gray-1;
+        animation: animateFromLeft .5s ease;
+        backface-visibility: hidden;
+    }
+
+    &__summary {
+        font-size: 1.6rem;
+        color: $text-color;
+        animation: animateFromRight .5s ease;
+        backface-visibility: hidden;
+
+        & > * {
+            padding: 1rem;
+            border-bottom: 2px solid $light-gray-1;
+        }
+
+    }
+
+    @keyframes animateFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20rem);
+        } to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+
+    @keyframes animateFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(20rem);
+        } to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+}

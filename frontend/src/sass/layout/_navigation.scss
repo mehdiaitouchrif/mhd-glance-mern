@@ -1,0 +1,213 @@
+.navigation {
+    height: 6.5rem;
+    border-bottom: 2px solid $light-gray-1;
+    padding: 0 2rem;
+    position: relative;
+
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    &__logo {
+        font-size: 2.5rem;
+        font-weight: 600;
+        font-family: 'Prompt', sans-serif;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        @include respond(tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__search {
+        margin-right: 2rem;
+        position: relative;
+        i {
+            position: absolute;
+            font-size: 1.6rem;
+            top: 1.25rem;
+            left: .5rem;
+            margin: 0 .5rem;
+        }
+
+        @include respond (tablet) {
+            display: none;
+        }
+
+    }
+
+    & .search-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 102%;
+        width: 100%;
+        z-index: 100;
+        display: none;
+        animation: animateSearchBox .4s ease;
+        overflow: hidden;
+
+        &__input {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            padding: 1.5rem 1rem;
+            font-size: 1.8rem;
+            font-family: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-bottom: 2px solid $light-gray-1;
+            transition: .2s all;
+
+            &:focus {
+                outline: none;
+                border-bottom: 2px solid #DA751C;
+            }
+        }
+
+        &__button {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: transparent;
+            font-size: 2rem;
+            border: none;
+            padding: 0 2rem;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+    }
+
+
+    &__input {
+        padding: 1rem 3rem;
+        font-size: 1.6rem;
+        border-radius: 4px;
+        border: 1px solid $light-gray-2;
+        margin-right: -1rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+
+
+    &__link {
+        font-size: 2.25rem;
+        padding: .5rem;
+        margin: 0 .5rem;
+        cursor: pointer;
+        position: relative;
+        
+        &--search {
+            display: none;
+            @include respond (tablet) {
+                display: block;
+            }
+        }
+        
+        span {
+            position: absolute;
+            top: -.75rem;
+            right: -.25rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            background-color: $danger-color;
+            color: $light-color;
+            width: 1.5rem;
+            text-align: center;
+            border-radius: 1rem;
+        }
+
+        &:hover {
+            color: lighten($color: $text-color, $amount: 10%)
+        }
+    }
+
+        // Hover menu
+        .navigation__hover-menu {
+            font-size: 1.8rem;
+            position: absolute;
+            top: 100%;
+            right: 5%;
+            z-index: 100;
+            background-color: $light-color;
+            width: 30rem;   
+            box-shadow: 0 1rem 2rem rgba($color: $dark-color, $alpha: .2);
+        }
+    
+        &__profile {
+            display: flex;
+            padding: 2rem 1rem;
+            cursor: pointer;
+            text-transform: capitalize;
+    
+            &:hover {
+                background-color: $light-gray-1;
+            }
+    
+            & > *:first-child {
+                font-size: 2rem;
+                padding: 1.25rem 2.25rem;
+                border-radius: 50%;
+                background-color: $blue-color;
+                margin-right: 1rem;
+            }
+        }
+    
+        &__list {
+            margin-bottom: 2rem;
+            & > * {
+                padding: 1rem 2rem;
+                display: flex;
+                height: 100%;
+                align-items: center;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: $light-gray-1;
+                }
+            }
+    
+            & i {
+                margin-right: 1rem;
+            }
+        }
+
+    @keyframes animateSearchBox {
+        from {
+            opacity: 0;
+            transform: translateY(-40rem);
+        } to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

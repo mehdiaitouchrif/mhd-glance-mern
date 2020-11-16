@@ -1,0 +1,118 @@
+.form {
+    @include respond(phone) {
+        padding: 0 1rem;
+    }
+    
+    .input, 
+    .textarea {
+        padding: 1.5rem 2rem;
+        font-size: 1.8rem;
+        font-family: inherit;
+        border: none;
+        border-bottom: 2px solid $dark-gray-1;
+        margin: .5rem 0;
+        width: 100%;
+        transition: .2s ease;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $dark-color;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    .input-success {
+        border-bottom: 3px solid green;
+    }
+
+    .input[type='file'] {
+        display: none;
+    }
+    
+    // Custom file upload
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        width: 100%;
+        padding: 1rem;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: $light-gray-2;
+        }
+    }
+
+    // Checkboxes
+    &__sizes {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    &__size {
+        display: block;
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        font-size: 2rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        & > input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: .25rem;
+        left: -1rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: $light-color;
+    }
+
+    &__size:hover input ~ &__checkmark {
+        background-color: $light-gray-2;
+      }
+    
+    &__size input:checked ~ &__checkmark {
+        background-color: #2196F3;
+    }
+
+    &__checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    &__size input:checked ~ &__checkmark:after {
+        display: block;
+    }
+
+    &__size &__checkmark:after {
+        left: 1rem;
+        top: .5rem;
+        width: .5rem;
+        height: 1rem;
+        border: solid $light-color;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      
+
+}

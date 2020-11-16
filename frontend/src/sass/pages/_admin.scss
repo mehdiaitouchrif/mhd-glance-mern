@@ -1,0 +1,405 @@
+.admin {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+
+    .container {
+        display: grid;
+        grid-template-columns: 20% 75%;
+        gap: 3rem;
+
+        @include respond(wide-screen) {
+            grid-template-columns: 1fr;
+            gap: 0;
+            padding: 0 2rem;
+        }
+
+        & > div {
+            &:first-child {
+                max-width: 40rem;
+
+                @include respond(wide-screen) {
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+            }
+
+            &:last-child {
+                max-width: 160rem;
+                margin: 0 auto;
+
+                @include respond(wide-screen) {
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    .admin-area {
+        background-color: $light-color;
+        z-index: 10;
+        min-height: 100vh;
+
+        @include respond(wide-screen) {
+            min-height: auto;
+            background-color: inherit;
+        }
+
+        &__list {
+            font-size: 2rem;
+            width: 100%;
+
+            @include respond(wide-screen) {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                // max-width: max-content;
+            }
+
+            & > * {
+                text-decoration: none;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+                padding: 1rem;
+                cursor: pointer;
+                transition: .3s all;
+
+                @include respond(wide-screen) {
+                    flex-direction: column;
+                }
+
+                &:first-child:hover, &.dashboard {
+                    background-color: $light-blue;
+                }
+
+                &:nth-child(2):hover, &.products {
+                    background-color: $light-purple;
+                }
+
+                &:nth-child(3):hover, &.orders {
+                    background-color: $light-orange;
+                }
+
+                &:last-child:hover, &.customers {
+                    background-color: $light-red;
+                }
+
+                li {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: $text-color;
+                }
+
+                span {
+                    padding: 1rem 1.5rem;
+                    border-radius: 10rem;
+                    margin-right: 1rem;
+                    text-align: center;
+
+                    &.first {
+                        background: #56CCF2;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+
+                    }
+                    &.second {
+                        background: #4e54c8;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+
+                    &.third {
+                        background: #f46b45;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+                    }
+
+                    &.fourth {
+                        background: #ff4b1f;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+           
+                    i {
+                        margin-right: 1rem;
+                        color: $light-color;
+                        display: inline-block;
+                        margin: 0 auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .dashboard,
+    .products,
+    .orders,
+    .customers {
+        font-size: 1.6rem;
+        animation: animate .6s ease;
+        backface-visibility: hidden;
+    }
+
+    .products,
+    .orders,
+    .customers {
+        &__head {
+            display: grid;
+            padding: 1rem 2rem;
+            background-color: $light-gray-2;
+            color: $text-color;
+            font-weight: 600;
+            gap: 1rem;
+        
+            & > *:last-child {
+                margin-left: 2rem;
+            }
+        }
+
+        &__product, 
+        &__order,
+        &__customer {
+            display: grid;
+            padding: 1rem;
+            gap: 1rem;
+            border-bottom: 2px solid $light-gray-2;
+        }
+
+
+        &__empty {
+            > img {
+                height: 24rem;
+            }
+        }
+    }
+
+    .dashboard {
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            @include respond(wide-screen) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include respond(tablet) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &__box {
+            font-size: 2rem;
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            color: $light-color;
+            cursor: pointer;
+            width: auto;
+
+            & > * {
+                margin: .5rem 0;
+            }
+
+            &:first-child {
+                background: #4e54c8; 
+                background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+                background: linear-gradient(to right, #8f94fb, #4e54c8);
+
+                &:hover {
+                    background: darken($color: #4e54c8 , $amount: 5%);
+                    background: -webkit-linear-gradient(to right, darken($color: #8f94fb , $amount: 5%), darken($color: #4e54c8 , $amount: 5%));
+                    background: linear-gradient(to right, darken($color: #8f94fb , $amount: 5%), darken($color: #4e54c8 , $amount: 5%));
+                }
+            }
+
+            &:nth-child(2) {
+                background: #56CCF2;
+                background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+                background: linear-gradient(to right, #2F80ED, #56CCF2);
+
+                &:hover {
+                    background: darken($color: #56CCF2 , $amount: 5%);
+                    background: -webkit-linear-gradient(to right, darken($color: #2F80ED , $amount: 5%), darken($color: #56CCF2 , $amount: 5%)); 
+                    background: linear-gradient(to right, darken($color: #2F80ED , $amount: 5%), darken($color: #56CCF2 , $amount: 5%));
+                }
+            }
+
+            &:last-child {
+                background: #f46b45;
+                background: -webkit-linear-gradient(to right, #eea849, #f46b45);
+                background: linear-gradient(to right, #eea849, #f46b45);
+
+                &:hover {
+                    background: darken($color: #f46b45, $amount: 5%);
+                    background: -webkit-linear-gradient(to right, darken($color: #eea849, $amount: 5%), darken($color: #f46b45, $amount: 5%)); 
+                    background: linear-gradient(to right, darken($color: #eea849, $amount: 5%), darken($color: #f46b45, $amount: 5%));
+                }
+            }
+        }
+
+        &__sales {
+            font-size: 1.6rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+
+            @include respond(wide-screen) {
+                grid-template-columns: 1fr;
+            }
+
+            & > * {
+                background-color: $light-color;
+                padding: 2rem;
+            }
+
+            .graph h2 {
+                text-align: center;
+            }
+        }
+
+        &__sale {
+            padding: 1rem;
+            margin: 1rem 0;
+            background-color: #f4f4f4;
+        }
+    }
+
+    .products {
+        &__head {
+            grid-template-columns: repeat(7, 1fr);
+        }   
+
+        @include respond(wide-screen) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        &__product {
+            grid-template-columns: repeat(7, 1fr);
+            @include respond(wide-screen) {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            & > img {
+                width: 12rem;
+            }
+
+            & > p {
+                font-size: 1.8rem;
+                margin-top: 1rem;
+            }
+        }
+
+        &__actions {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        &__action {
+            font-size: 2.25rem;
+            margin: 0 .75rem;
+            cursor: pointer;
+
+            &:first-child {
+                color: #4e54c8;
+
+                &:hover {
+                    color: darken($color: #4e54c8, $amount: 10%);
+                }
+            }
+
+            &:last-child {
+                color: #f46b45;
+
+                &:hover {
+                    color: darken($color: #f46b45, $amount: 10%);
+                }
+            }
+        }
+    }
+
+    .orders {
+
+        &__head {
+            grid-template-columns: repeat(7, 1fr);
+  
+        }
+
+        &__order {
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        &__actions {
+            display: flex;
+        }
+
+        &__action {
+            font-size: 2.25rem;
+            margin: 0 1rem;
+            cursor: pointer;
+
+            &:first-child {
+                color: #0f990f;
+                &:hover {
+                    color: darken($color: #0f990f, $amount: 10%);
+                }
+            }
+
+            &:last-child {
+                color: #f46b45;
+
+                &:hover {
+                    color: darken($color: #f46b45, $amount: 10%);
+                }
+            }
+        }
+    }
+
+    .customers {
+        &__head {
+            grid-template-columns: repeat(4, 1fr);
+
+            @include respond(wide-screen) {
+                grid-template-columns: repeat(3, 1fr) auto;
+            }
+        }
+
+        &__empty {
+            & > img {
+                height: 20rem;
+            }
+        }
+
+        &__customer {
+            grid-template-columns: repeat(3, 1fr) 10rem;
+            @include respond(wide-screen) {
+                grid-template-columns: repeat(3, 1fr) auto;
+                margin-bottom: 5rem;
+            }
+
+            & > *:last-child {
+                color: #f46b45;
+                font-size: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: darken($color: #f46b45, $amount: 10%);
+                }
+            }
+        }
+    }
+
+    @keyframes animate {
+        from {
+            opacity: 0;
+            transform: translateX(-25rem);
+        } to {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+}

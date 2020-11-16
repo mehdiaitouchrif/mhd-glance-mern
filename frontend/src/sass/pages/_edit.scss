@@ -1,0 +1,21 @@
+.edit {
+    background-color: $light-gray-1;
+    min-height: 100vh;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+
+
+    .container {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+}

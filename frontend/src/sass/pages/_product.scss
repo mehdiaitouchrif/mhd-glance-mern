@@ -1,0 +1,58 @@
+.single-product {
+    margin-bottom: 4rem;
+    padding: 2rem 4rem;
+
+    @include respond(phone) {
+        padding: 1rem 2rem;
+    }
+    .container {
+        max-width: 120rem;
+
+        @include respond(phone-tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__picture {
+        padding: 2rem;
+        border: 1px solid $light-gray-2;
+    }
+    &__text {
+        padding: 1.5rem;
+        border: 1px solid $light-gray-2;
+    }
+    
+    &__desc {
+        margin: 1rem 0;
+    }
+
+    &__title {
+        font-size: 3rem;
+    }
+
+    &__price {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+
+    &__select {
+        padding: 1rem;
+        font-size: 1.6rem;
+        display: inline-block;
+        width: 100%;
+        margin: .5rem 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    &__link {
+        display: inline-block;
+        width: 100%;
+        margin: 1rem auto;
+        font-size: 2rem;
+        text-decoration: none;
+        text-align: center;
+    }
+}

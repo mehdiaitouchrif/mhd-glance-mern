@@ -1,0 +1,35 @@
+.cart-item {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 3rem;
+    padding: 1rem 4rem 1rem 1rem;
+    border-bottom: 1px solid $light-gray-2;
+
+    &__text {
+        color: text-color;
+        max-width: 100%;
+
+        i:hover {
+            color: $danger-color;
+        }
+    }
+
+    span {
+        cursor: pointer;
+    }
+
+    &__name, &__price {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    &__desc {
+        font-size: 1.8rem;
+        padding-right: 2rem;
+    }
+
+    &__picture {
+        border: 1px solid $light-gray-2;
+    }
+  
+}
