@@ -28,7 +28,7 @@ const Dashboard = ({ changeDisplayedComponent, orders }) => {
                 </div>
                 <div>
                     <p className="lead">LATEST SALES</p>
-                    {orders && orders.map((order, index) => index < 3 && (
+                    {orders && orders.sort((a,b) => (a.status === 'pending') ? -1 : 1).map((order, index) => index < 3 && (
                         <div key={order._id} className="dashboard__sale">
                             <p><strong>{order.name}</strong> ordered <strong>{order.product.name}</strong></p>
                             <small>{moment(order.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</small>
