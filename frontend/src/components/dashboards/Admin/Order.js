@@ -15,7 +15,7 @@ const Order = ({ order, cancelOrder, updateOrder }) => {
     }
 
     return (
-        <div className='orders__order'>
+        <div className={`orders__order ${status === 'delivered' && 'orders__order--disabled'}`}>
             <p>{order.product.name}</p>
             <p>{size}</p>
             <p>{status}</p>
