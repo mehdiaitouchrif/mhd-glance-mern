@@ -1,6 +1,6 @@
 # MHD GLANCE eCommerce Platform
 
-> Complete eCommerce platform. Uses Node.js with Express & MongoDB backend and a React redux frontend.
+> Complete eCommerce platform. Uses a Node.js with Express & MongoDB backend and a React redux frontend.
 
 ![screenshot](https://repository-images.githubusercontent.com/313355256/89b08a00-2c31-11eb-859d-3566a213d4a3)
 
