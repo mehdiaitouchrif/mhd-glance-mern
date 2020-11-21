@@ -6,6 +6,7 @@ import { setAlert } from '../../actions/alertsActions'
 import Alert from '../layout/Alert'
 import PropTypes from 'prop-types'
 import Spinner from '../layout/Spinner';
+import Image from '../../img/secure.jpg'
 
 const Buy = ({ match, user, placeOrder, getProduct, loading, product, error, setAlert, alerts }) => {
     useEffect(() => {
@@ -65,29 +66,9 @@ const Buy = ({ match, user, placeOrder, getProduct, loading, product, error, set
         } else {
             setAlert('Please fill in all fields', 'danger')
         }
-        // setOrder({
-        //     name: `${firstName} ${lastName}`,
-        //     email,
-        //     city,
-        //     size: match.params.size,
-        //     quantity: +match.params.quantity,
-        //     product: match.params.id,
-        //     user: user.data._id,
-        //     zipcode,
-        //     address
-        // })
-
-
-        // disableForm(e.target)
-
     }
 
     const onBuy = () => {
-        // if (order === '') {
-        //     alert('fill the form first biatch!!')
-        // } else {
-        //     placeOrder(order)
-        // }
         if (error) {
             error.error.map(err => {
                 return Object.keys(err).map(key => setAlert(err[key], 'danger'))
@@ -118,15 +99,6 @@ const Buy = ({ match, user, placeOrder, getProduct, loading, product, error, set
                             <input type="submit" disabled={order !== ''} value="Confirm" className='btn btn--lg btn--block my-1' />
                         </div>
                     </div>
-                    {/* <div>
-                        <h2 className="secondary-heading">Payment Method</h2>
-                        <div>
-                            <input type='radio' onChange={onChange} name='method' value='card' checked={method === 'card'} /> Credit Card
-                        </div>
-                        <div>
-                            <input type='radio' onChange={onChange} name='method' value='paypal' checked={method === 'paypal'} /> Paypal Express Checkout
-                        </div>
-                    </div> */}
                 </form>
                 <div className="order-summary">
                     <h2 className="secondary-heading order-summary__heading">Review Order</h2>
@@ -167,7 +139,7 @@ const Buy = ({ match, user, placeOrder, getProduct, loading, product, error, set
                             </Fragment>
                         )}
                         <div>
-                            <img src="/uploads/secure-payment.png" alt="Secure Payment" />
+                            <img src={Image} alt="Secure Payment" />
                         </div>
                     </div>
                 </div>
